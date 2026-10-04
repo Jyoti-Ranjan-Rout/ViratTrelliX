@@ -29,12 +29,12 @@ def get_db():
 def greet():
     return "Welcome to @theviratvision018 Trac"
 
-@app.get("/products/")
+@app.get("/products")
 def all_products(db : Session = Depends(get_db) ):
     products = db.query(Product).all()
     return products
 
-@app.post("/products/")
+@app.post("/products")
 def add_product(product : Products , db : Session = Depends(get_db) ):
     new_product = Product(name=product.name,description=product.description,price=product.price,quantity=product.quantity)
     db.add(new_product)
