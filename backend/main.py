@@ -6,20 +6,13 @@ from sqlalchemy.orm import Session
 
 app = FastAPI()
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=["https://virat-trelli-x-seven.vercel.app"],
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://virat-trelli-x-seven.vercel.app","https://virat-trelli-x-seven.vercel.app/"
     ],
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
